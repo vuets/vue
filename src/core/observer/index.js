@@ -147,7 +147,7 @@ export function defineReactive (
 
   let childOb = observe(val)
   Object.defineProperty(obj, key, {
-    enumerable: true,
+    enumerable: key !== '_',
     configurable: true,
     get: function reactiveGetter () {
       const value = getter ? getter.call(obj) : val
