@@ -776,7 +776,7 @@ function defineReactive$$1 (
 
   var childOb = observe(val);
   Object.defineProperty(obj, key, {
-    enumerable: true,
+    enumerable: key !== '_',
     configurable: true,
     get: function reactiveGetter () {
       var value = getter ? getter.call(obj) : val;
